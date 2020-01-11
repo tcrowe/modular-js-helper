@@ -2,8 +2,8 @@
 
 Atom plugin for easily `import`-ing or `require`-ing your modules. We want this plugin to be the most helpful, most robust, and most complete modular JS(and TS) helper.
 
-+ [🗣 Help by answering questions](/tcrowe/modular-js-helper/issues)
-+ [🤔 Help by reviewing PRs](/tcrowe/modular-js-helper/pulls)
++ [🤓 Help by answering questions](/../../issues)
++ [👨‍🔬 Help by reviewing PRs](/../../pulls)
 + [💰 Crowdfund](#crowdfund)
 
 Module types:
