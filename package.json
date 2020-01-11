@@ -12,7 +12,15 @@
     "type": "git",
     "url": "git+ssh://git@github.com/tcrowe/modular-js-helper.git"
   },
-  "keywords": [],
+  "keywords": [
+    "atom",
+    "plugin",
+    "atom-editor",
+    "atom-editor-plugin",
+    "commonjs",
+    "esm",
+    "amd"
+  ],
   "bugs": {
     "url": "https://github.com/tcrowe/modular-js-helper/issues"
   },
