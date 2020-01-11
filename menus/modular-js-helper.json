@@ -1,0 +1,26 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "command": "modular-js-helper:find-then-insert",
+        "label": "modular-js-helper:find-then-insert"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "modular-js-helper",
+          "submenu": [
+            {
+              "command": "modular-js-helper:find-then-insert",
+              "label": "modular-js-helper:find-then-insert"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

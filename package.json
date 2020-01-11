@@ -1,0 +1,175 @@
+{
+  "name": "modular-js-helper",
+  "version": "0.1.0",
+  "description": "",
+  "author": {
+    "name": "Tony Crowe",
+    "url": "https://tcrowe.github.io/contact"
+  },
+  "license": "GPL-3.0",
+  "homepage": "https://github.com/tcrowe/modular-js-helper#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/tcrowe/modular-js-helper.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/tcrowe/modular-js-helper/issues"
+  },
+  "main": "src/index.js",
+  "engines": {
+    "atom": ">=1.0.0"
+  },
+  "dependencies": {
+    "async": "^3.1.0",
+    "atom-select-list": "^0.7.2",
+    "lodash": "^4.17.15",
+    "relative": "^3.0.2",
+    "search-filenames": "^0.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "mocha": "^7.0.0",
+    "nodemon": "^2.0.2",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.19.1",
+    "remark-cli": "^7.0.1",
+    "remark-lint": "^6.0.5",
+    "remark-toc": "^6.0.0",
+    "should": "^13.2.3"
+  },
+  "scripts": {
+    "dev-eslint": "nodemon -q -w src -w test --exec 'eslint --cache --fix --format unix src test' || true",
+    "dev-mocha": "nodemon -q -w src -w test --exec 'mocha' || true",
+    "dev": "run-p -s 'dev-*'",
+    "test": "mocha",
+    "prd-eslint": "eslint --format unix src test",
+    "prd-remark": "remark . -o",
+    "prd": "run-s -s 'prd-*' test"
+  },
+  "remarkConfig": {
+    "settings": {
+      "bullet": "+",
+      "listItemIndent": 1,
+      "fences": true,
+      "emphasis": "*"
+    },
+    "plugins": [
+      "lint",
+      [
+        "toc",
+        {
+          "tight": true
+        }
+      ]
+    ],
+    "output": true
+  },
+  "mocha": {
+    "colors": true,
+    "reporter": "spec",
+    "ui": "bdd",
+    "bail": true,
+    "fullTrace": true,
+    "exit": true,
+    "require": [
+      "should"
+    ]
+  },
+  "configSchema": {
+    "moduleSystem": {
+      "title": "Module system",
+      "type": "string",
+      "default": "commonjs",
+      "enum": [
+        {
+          "value": "commonjs",
+          "description": "CommonJS `require`"
+        },
+        {
+          "value": "esm",
+          "description": "ESM: ECMAScript Modules `import`"
+        },
+        {
+          "value": "amd",
+          "description": "AMD: Asynchronous Module Definition `define`"
+        }
+      ]
+    },
+    "declarationKeyword": {
+      "title": "Variable declaration keyword",
+      "type": "string",
+      "default": "const",
+      "enum": [
+        {
+          "value": "var",
+          "description": "var"
+        },
+        {
+          "value": "const",
+          "description": "const"
+        },
+        {
+          "value": "let",
+          "description": "let"
+        }
+      ]
+    },
+    "quotes": {
+      "title": "Quotes",
+      "type": "string",
+      "default": "double",
+      "enum": [
+        {
+          "value": "single",
+          "description": "single '"
+        },
+        {
+          "value": "double",
+          "description": "double \""
+        },
+        {
+          "value": "template",
+          "description": "template `"
+        }
+      ]
+    },
+    "searchProjectSourcePath": {
+      "title": "Search project source path",
+      "type": "boolean",
+      "default": true
+    },
+    "projectSourcePath": {
+      "title": "Relative project source path",
+      "type": "string",
+      "default": "src"
+    },
+    "searchPackageJson": {
+      "title": "Search package.json",
+      "type": "boolean",
+      "default": true
+    },
+    "searchNodeModules": {
+      "title": "Search node_modules",
+      "type": "boolean",
+      "default": true
+    },
+    "usePackageJsonConfigs": {
+      "title": "Use package.json#modular-js-helper configs",
+      "type": "boolean",
+      "default": true
+    },
+    "extensions": {
+      "title": "File extensions",
+      "type": "string",
+      "default": "js,ts,ls,vue,svelte,json"
+    },
+    "excludes": {
+      "title": "File search excludes",
+      "type": "string",
+      "default": "node_modules,.git"
+    }
+  }
+}
