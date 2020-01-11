@@ -18,6 +18,10 @@ It searches:
 + `node_modules`
 + `package.json` → `dependencies` & `devDependencies`
 
+![./img/readme-settings.png](./img/readme-settings.png)
+
+![./img/readme-keybindings.png](./img/readme-keybindings.png)
+
 ## Table of Contents
 
 + [Crowdfund](#crowdfund)
